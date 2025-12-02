@@ -25,7 +25,7 @@ When you run the program, you will be shown a series of multiple-choice Harry Po
 4. If the compilation is successful, you will see an output file named trivia (or trivia.exe on Windows).
    
 ## Usage
-1. After compiling, run the program using: "./trivia"
+1. run the program.
 2. The quiz will start and you will be shown multiple-choice Harry Potter questions.
 3. Type the number of the answer you want (1, 2, or 3) and press Enter.
 4. 	At the end of the quiz, the program will show your total score and a fun message like:
