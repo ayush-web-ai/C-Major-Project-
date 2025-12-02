@@ -3,10 +3,10 @@
 int main() {
 
     int score = 0;
-    int answer;
-    int i;
+    int answer=0;
+    int i=0;
     char name[50];
-    FILE *fp;
+    FILE *fptr = NULL;
 
     printf("Welcome to the Harry Potter Trivia Quiz!\n");
     printf("Let's see how well you know the Wizarding World!\n\n");
@@ -21,7 +21,9 @@ int main() {
             printf("Enter your choice: ");
             scanf("%d", &answer);
 
-            if(answer == 2) score++;
+            if(answer == 2) {
+                score++;
+                }
             printf("\n");
         }
 
@@ -33,7 +35,9 @@ int main() {
             printf("Enter your choice: ");
             scanf("%d", &answer);
 
-            if(answer == 3) score++;
+            if(answer == 3) {
+                score++;
+                }
             printf("\n");
         }
 
@@ -45,7 +49,9 @@ int main() {
             printf("Enter your choice: ");
             scanf("%d", &answer);
 
-            if(answer == 2) score++;
+            if(answer == 2) {
+                score++;
+                }
             printf("\n");
         }
 
@@ -57,7 +63,9 @@ int main() {
             printf("Enter your choice: ");
             scanf("%d", &answer);
 
-            if(answer == 1) score++;
+            if(answer == 1) {
+                score++;
+                }
             printf("\n");
         }
 
@@ -69,7 +77,9 @@ int main() {
             printf("Enter your choice: ");
             scanf("%d", &answer);
 
-            if(answer == 1) score++;
+            if(answer == 1) {
+                score++;
+                }
             printf("\n");
         }
 
@@ -81,7 +91,9 @@ int main() {
             printf("Enter your choice: ");
             scanf("%d", &answer);
 
-            if(answer == 1) score++;
+            if(answer == 1) {
+                score++;
+                }
             printf("\n");
         }
 
@@ -93,7 +105,9 @@ int main() {
             printf("Enter your choice: ");
             scanf("%d", &answer);
 
-            if(answer == 3) score++;
+            if(answer == 3){
+                score++;
+                }
             printf("\n");
         }
     }
@@ -108,23 +122,23 @@ int main() {
         printf("Better luck next time, Muggle!\n");
     }
 
-    // --- SCOREBOARD SYSTEM ---
+     
     printf("\nEnter your name to save your score: ");
-    scanf(" %[^\n]", name);  // allows full name with spaces
+    scanf(" %[^\n]", name);  
 
-    fp = fopen("scoreboard.txt", "a"); // try to append or create
+    fptr = fopen("scoreboard.txt", "a"); 
 
-    if(fp == NULL) {
-        fp = fopen("scoreboard.txt", "w"); // second try: create file
+    if(fptr == NULL) {
+        fptr = fopen("scoreboard.txt", "w"); 
     }
 
-    if(fp == NULL) {
+    if(fptr == NULL) {
         printf("Still couldn't open file. Please check folder permissions.\n");
         return 1;
     }
 
-    fprintf(fp, "%s - %d/7\n", name, score);
-    fclose(fp);
+    fprintf(fptr, "%s - %d/7\n", name, score);
+    fclose(fptr);
 
     printf("Score saved successfully!\n");
 
